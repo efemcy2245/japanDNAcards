@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Il Tuo Shop — Contatti</title>
-  <meta name="description" content="Landing e-commerce con contatti rapidi (telefono, WhatsApp, Instagram) con copia in un tocco." />
   <style>
     :root{
-      --bg: #fdfbf8;
-      --card: #ffffff;
-      --soft: #f4f6fb;
-      --text: #1c1c22;
-      --muted:#6e7484;
-      --accent:#e74b3c;   /* arancio/rosso dal logo */
-      --accent-2:#0077b6; /* blu dal logo */
+      --bg: #FDFBF8;       /* beige chiaro dal fondo immagine */
+      --card: #ffffff;     /* bianco per leggibilità */
+      --soft: #f4f6fb;     /* grigio chiaro/azzurrino */
+      --text: #1c1c22;     /* testo scuro */
+      --muted:#6e7484;     /* grigio-blu per testo secondario */
+      --accent:#E74B3C;    /* arancio/rosso DNA */
+      --accent-2:#0077B6;  /* blu DNA */
       --shadow: 0 10px 30px rgba(0,0,0,.12);
       --radius: 18px;
     }
@@ -25,8 +24,8 @@
         --soft:#222630;
         --text:#f0f2f8;
         --muted:#a0a6b6;
-        --accent:#ff6b4a;
-        --accent-2:#0096c7;
+        --accent:#FF6B4A;
+        --accent-2:#0096C7;
         --shadow:0 10px 25px rgba(0,0,0,.5);
       }
     }
@@ -35,345 +34,81 @@
     html,body{height:100%}
     body{
       margin:0;
-      font: 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      font: 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
       color:var(--text);
-      background: url("Dynamic logo with back.png") center/cover no-repeat fixed;
+      background: url("Dynamic logo with back.png") center/cover no-repeat fixed, var(--bg);
     }
 
     .backdrop{
-      /* leggero velo per mantenere leggibilità sullo sfondo */
-      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.78));
+      /* overlay trasparente per mantenere leggibilità su immagine */
+      background: rgba(253,251,248,.88);
       min-height: 100%;
     }
 
     .container{max-width:1000px; margin:0 auto; padding:24px;}
     header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0 0}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
     .logo{width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:var(--shadow)}
     .pill{padding:8px 12px; background:var(--soft); color:var(--muted); border-radius:999px; font-size:.9rem}
-    .lang-switch{display:flex; gap:6px; align-items:center}
-    .lang-btn{appearance:none;border:1px solid rgba(0,0,0,.12);background:#fff;color:#1c1c22;padding:6px 10px;border-radius:999px;cursor:pointer;font-weight:600}
-    .lang-btn.active{border-color:var(--accent); color:#fff; background:linear-gradient(135deg, var(--accent), var(--accent-2));}
-
-    .hero{margin:36px 0 22px; padding:26px; border-radius:var(--radius); background:rgba(255,255,255,.85); border:1px solid rgba(0,0,0,.08)}
+    .hero{margin:36px 0 22px; padding:26px; border-radius:var(--radius); background:rgba(255,255,255,.9); border:1px solid rgba(0,0,0,.08)}
     h1{margin:0 0 10px; font-size:clamp(1.4rem, 2.4vw + 1rem, 2.2rem)}
     p{margin:0}
 
-    .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:18px; align-items:stretch}
-    .card{grid-column: span 12; background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); box-shadow:var(--shadow);
-          padding:18px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease}
-    .card:hover{transform: translateY(-2px); border-color: var(--accent);}
+    .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:18px}
+    .card{grid-column: span 12; background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; transition: transform .2s ease, border-color .2s ease}
+    .card:hover{transform: translateY(-2px); border-color: var(--accent)}
 
-    @media (min-width:740px){
-      .card.half{grid-column: span 6}
-    }
-
-    .card h2{margin:2px 0 8px; font-size:1.1rem}
-    .row{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-          background:var(--soft); color:var(--text); padding:8px 10px; border-radius:10px; border:1px dashed rgba(0,0,0,.12)}
+    @media (min-width:740px){.card.half{grid-column: span 6}}
 
     .btn{appearance:none; border:1px solid transparent; background:var(--soft); color:var(--text); padding:10px 12px; border-radius:12px; cursor:pointer;
-         font-weight:600; display:inline-flex; align-items:center; gap:8px; transition: transform .08s ease, background .2s ease, border-color .2s ease; text-decoration:none}
+         font-weight:600; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition: transform .08s ease, background .2s ease, border-color .2s ease}
     .btn:hover{background:#eaeff6}
-    .btn:active{transform: translateY(1px)}
-    .btn.primary{background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff}
-    .btn.link{background:transparent; border-color: rgba(0,0,0,.16)}
-    .btn svg{width:18px; height:18px}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff}
+    .btn.link{background:transparent; border:1px solid rgba(0,0,0,.16)}
 
     .muted{color:var(--muted)}
     .sep{height:1px; background:linear-gradient(90deg, transparent, var(--accent), transparent); margin:20px 0}
-
-    .toast{position:fixed; left:50%; transform:translateX(-50%) translateY(20px); bottom:24px; background:rgba(20,24,40,.92); color:#eaf1ff; border:1px solid var(--accent);
-           padding:12px 14px; border-radius:12px; box-shadow:var(--shadow); opacity:0; pointer-events:none; transition: opacity .18s ease, transform .18s ease}
-    .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
-    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
-
-    .hidden{display:none}
   </style>
-  <script>
-    /* ========= YOUR DATA (edit once) ========= */
-    const PHONE_DISPLAY = "+39 333 123 4567";   // visual format
-    const PHONE_E164    = "+393331234567";      // digits with country code for tel/WhatsApp
-    const IG_HANDLE     = "tuo_shop";           // without @
-    /* ======================================== */
-
-    const TEXT = {
-      it: {
-        title: "Il Tuo Shop — Contatti",
-        heroTitle: "Benvenuto! ✨",
-        heroBody: "Qui trovi i contatti rapidi del nostro e-commerce. Puoi <strong>copiare</strong> il numero o il link Instagram in un tocco.",
-        pill: "Consegne in tutta Italia",
-        phone: "Telefono",
-        copyPhone: "Copia numero",
-        whatsapp: "WhatsApp",
-        instagram: "Instagram",
-        visitProfile: "Visita profilo",
-        copyLink: "Copia link",
-        about: "Chi siamo",
-        aboutBody: "Sostituisci questo testo con una breve presentazione del tuo brand, spedizioni, resi o orari di risposta su WhatsApp/Instagram.",
-        tip: "Suggerimento: aggiungi questa pagina come link in bio su Instagram oppure fissala in alto su WhatsApp Business.",
-        toastCopied: "Copiato negli appunti",
-        toastDenied: "Impossibile copiare: consenti gli appunti",
-        brandSubtitle: "E-commerce artigianale",
-        langIT: "IT",
-        langEN: "EN"
-      },
-      en: {
-        title: "Your Shop — Contacts",
-        heroTitle: "Welcome! ✨",
-        heroBody: "Here you’ll find quick contacts for our e-commerce. You can <strong>copy</strong> the phone number or Instagram link in one tap.",
-        pill: "Shipping across Italy",
-        phone: "Phone",
-        copyPhone: "Copy number",
-        whatsapp: "WhatsApp",
-        instagram: "Instagram",
-        visitProfile: "Visit profile",
-        copyLink: "Copy link",
-        about: "About us",
-        aboutBody: "Replace this text with a short intro to your brand, shipping/returns info, or reply hours on WhatsApp/Instagram.",
-        tip: "Tip: add this page as your Instagram bio link or pin it on WhatsApp Business.",
-        toastCopied: "Copied to clipboard",
-        toastDenied: "Couldn’t copy: allow clipboard access",
-        brandSubtitle: "Handcrafted e-commerce",
-        langIT: "IT",
-        langEN: "EN"
-      }
-    };
-
-    function setLang(lang){
-      const t = TEXT[lang] || TEXT.it;
-      document.title = t.title;
-      document.documentElement.lang = lang;
-
-      // Swap visible blocks
-      document.querySelectorAll('[data-lang]').forEach(el=>{
-        el.classList.toggle('hidden', el.getAttribute('data-lang') !== lang);
-      });
-
-      // Fill texts inside the active block
-      const root = document.querySelector(`[data-lang="${lang}"]`);
-      root.querySelector('.heroTitle').innerHTML = t.heroTitle;
-      root.querySelector('.heroBody').innerHTML = t.heroBody;
-      root.querySelector('.pill').textContent = t.pill;
-      root.querySelector('.lbl-phone').textContent = t.phone;
-      root.querySelector('.btnCopyPhone').lastChild.textContent = ' ' + t.copyPhone;
-      root.querySelector('.btnWA').textContent = t.whatsapp;
-      root.querySelector('.lbl-instagram').textContent = t.instagram;
-      root.querySelector('.btnIG').lastChild.textContent = ' ' + t.visitProfile;
-      root.querySelector('.btnCopyIG').lastChild.textContent = ' ' + t.copyLink;
-      root.querySelector('.aboutTitle').textContent = t.about;
-      root.querySelector('.aboutBody').textContent = t.aboutBody;
-      root.querySelector('.tip').textContent = t.tip;
-      root.querySelector('.brandSubtitle').textContent = t.brandSubtitle;
-
-      // Update header lang buttons
-      document.querySelectorAll('.lang-btn').forEach(b=>{
-        b.classList.toggle('active', b.dataset.setlang === lang);
-        if(b.dataset.setlang === 'it') b.textContent = t.langIT;
-        if(b.dataset.setlang === 'en') b.textContent = t.langEN;
-      });
-
-      // Toast messages for current lang
-      window.__TOAST_OK__ = t.toastCopied;
-      window.__TOAST_ERR__ = t.toastDenied;
-    }
-
-    function initCommonLinks(){
-      // Fill phone/IG in both language blocks (same data)
-      document.querySelectorAll('.phoneText').forEach(el=>{
-        el.textContent = PHONE_DISPLAY;
-        el.setAttribute('data-copy', PHONE_E164);
-      });
-      document.querySelectorAll('.btnCall').forEach(el=> el.href = `tel:${PHONE_E164}`);
-      const wa = `https://wa.me/${PHONE_E164}`;
-      document.querySelectorAll('.btnWA').forEach(el=> el.href = wa);
-
-      const igUrl = `https://instagram.com/${IG_HANDLE}`;
-      document.querySelectorAll('.igText').forEach(el=> el.textContent = '@' + IG_HANDLE);
-      document.querySelectorAll('.btnIG').forEach(el=> el.href = igUrl);
-      document.querySelectorAll('.btnCopyIG').forEach(el=> el.setAttribute('data-copy', igUrl));
-    }
-
-    let toastTimer;
-    function showToast(msg){
-      const el = document.getElementById('toast');
-      el.textContent = msg; el.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(()=> el.classList.remove('show'), 1800);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      // Insert shared links/texts
-      initCommonLinks();
-
-      // Copy handling (delegated)
-      document.body.addEventListener('click', async (e) => {
-        const btn = e.target.closest('[data-copy]');
-        if(!btn) return;
-        const text = btn.getAttribute('data-copy');
-        try {
-          if(navigator.clipboard?.writeText){
-            await navigator.clipboard.writeText(text);
-          } else {
-            const ta = document.createElement('textarea');
-            ta.value = text; document.body.appendChild(ta); ta.select();
-            document.execCommand('copy'); ta.remove();
-          }
-          showToast(window.__TOAST_OK__ || 'Copied');
-        } catch(err){
-          showToast(window.__TOAST_ERR__ || 'Copy failed');
-        }
-      });
-
-      // Auto-detect language (default IT; non-Italian -> EN)
-      const navLang = (navigator.language || 'it').toLowerCase();
-      const initial = navLang.startsWith('it') ? 'it' : 'en';
-      setLang(initial);
-
-      // Manual language switch
-      document.querySelectorAll('.lang-btn').forEach(btn=>{
-        btn.addEventListener('click', ()=> setLang(btn.dataset.setlang));
-      });
-    });
-  </script>
 </head>
 <body>
-  <a class="sr-only" href="#contatti-it">Skip to contacts</a>
-
   <div class="backdrop">
     <div class="container">
       <header>
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
+          <div class="logo"></div>
           <div>
             <div>Il Tuo Shop</div>
-            <small class="muted brandSubtitle">E-commerce artigianale</small>
+            <small class="muted">E-commerce artigianale</small>
           </div>
         </div>
-        <div class="lang-switch">
-          <button class="lang-btn active" data-setlang="it" type="button">IT</button>
-          <button class="lang-btn" data-setlang="en" type="button">EN</button>
-        </div>
+        <div class="pill">Consegne in tutta Italia</div>
       </header>
 
-      <!-- ===== ITALIAN ===== -->
-      <main data-lang="it" id="page-it">
-        <div class="pill" style="margin-top:12px; display:inline-block"></div>
+      <section class="hero">
+        <h1>Benvenuto! ✨</h1>
+        <p class="muted">Contatti rapidi del nostro e-commerce.</p>
+      </section>
 
-        <section class="hero" id="hero-it">
-          <h1 class="heroTitle">Benvenuto! ✨</h1>
-          <p class="muted heroBody">Testo</p>
-        </section>
+      <section class="grid">
+        <article class="card half">
+          <h2>Telefono</h2>
+          <p><strong>+39 333 123 4567</strong></p>
+          <a class="btn primary" href="tel:+393331234567">Chiama</a>
+          <a class="btn link" href="https://wa.me/393331234567" target="_blank">WhatsApp</a>
+        </article>
 
-        <section id="contatti-it" class="grid" aria-label="Contatti rapidi">
-          <!-- TELEFONO -->
-          <article class="card half" aria-labelledby="tit-telefono-it">
-            <h2 id="tit-telefono-it" class="lbl-phone">Telefono</h2>
-            <div class="row" style="margin:10px 0 14px">
-              <code class="mono phoneText">+39 000 000 0000</code>
-            </div>
-            <div class="row">
-              <a class="btn primary btnCall" href="#" aria-label="Chiama">
-                <!-- phone icon -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.15a2 2 0 0 1 2.11-.45c.84.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92z"/></svg>
-                Chiama
-              </a>
-              <button class="btn btnCopyPhone" type="button" data-copy="" aria-label="Copia numero" title="Copia numero">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                Copia numero
-              </button>
-              <a class="btn link btnWA" href="#" target="_blank" rel="noopener" aria-label="Apri WhatsApp">WhatsApp</a>
-            </div>
-          </article>
+        <article class="card half">
+          <h2>Instagram</h2>
+          <p><strong>@tuo_shop</strong></p>
+          <a class="btn primary" href="https://instagram.com/tuo_shop" target="_blank">Visita profilo</a>
+        </article>
 
-          <!-- INSTAGRAM -->
-          <article class="card half" aria-labelledby="tit-instagram-it">
-            <h2 id="tit-instagram-it" class="lbl-instagram">Instagram</h2>
-            <div class="row" style="margin:10px 0 14px">
-              <code class="mono igText">@nome_profilo</code>
-            </div>
-            <div class="row">
-              <a class="btn primary btnIG" href="#" target="_blank" rel="noopener" aria-label="Visita profilo Instagram">
-                <!-- ig icon -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                Visita profilo
-              </a>
-              <button class="btn btnCopyIG" type="button" data-copy="#" aria-label="Copia link Instagram" title="Copia link Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                Copia link
-              </button>
-            </div>
-          </article>
-
-          <div class="card" style="grid-column: span 12">
-            <h2 class="aboutTitle" style="margin-bottom:6px">Chi siamo</h2>
-            <p class="muted aboutBody">Testo</p>
-            <div class="sep"></div>
-            <p class="muted tip" style="font-size:.9rem">Suggerimento</p>
-          </div>
-        </section>
-      </main>
-
-      <!-- ===== ENGLISH ===== -->
-      <main data-lang="en" id="page-en" class="hidden">
-        <div class="pill" style="margin-top:12px; display:inline-block"></div>
-
-        <section class="hero" id="hero-en">
-          <h1 class="heroTitle">Welcome! ✨</h1>
-          <p class="muted heroBody">Text</p>
-        </section>
-
-        <section id="contacts-en" class="grid" aria-label="Quick contacts">
-          <!-- PHONE -->
-          <article class="card half" aria-labelledby="tit-phone-en">
-            <h2 id="tit-phone-en" class="lbl-phone">Phone</h2>
-            <div class="row" style="margin:10px 0 14px">
-              <code class="mono phoneText">+39 000 000 0000</code>
-            </div>
-            <div class="row">
-              <a class="btn primary btnCall" href="#" aria-label="Call">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.15a2 2 0 0 1 2.11-.45c.84.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92z"/></svg>
-                Call
-              </a>
-              <button class="btn btnCopyPhone" type="button" data-copy="" aria-label="Copy number" title="Copy number">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                Copy number
-              </button>
-              <a class="btn link btnWA" href="#" target="_blank" rel="noopener" aria-label="Open WhatsApp">WhatsApp</a>
-            </div>
-          </article>
-
-          <!-- INSTAGRAM -->
-          <article class="card half" aria-labelledby="tit-instagram-en">
-            <h2 id="tit-instagram-en" class="lbl-instagram">Instagram</h2>
-            <div class="row" style="margin:10px 0 14px">
-              <code class="mono igText">@handle</code>
-            </div>
-            <div class="row">
-              <a class="btn primary btnIG" href="#" target="_blank" rel="noopener" aria-label="Visit Instagram profile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                Visit profile
-              </a>
-              <button class="btn btnCopyIG" type="button" data-copy="#" aria-label="Copy Instagram link" title="Copy Instagram link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                Copy link
-              </button>
-            </div>
-          </article>
-
-          <div class="card" style="grid-column: span 12">
-            <h2 class="aboutTitle" style="margin-bottom:6px">About us</h2>
-            <p class="muted aboutBody">Text</p>
-            <div class="sep"></div>
-            <p class="muted tip" style="font-size:.9rem">Tip</p>
-          </div>
-        </section>
-      </main>
-
+        <div class="card" style="grid-column: span 12">
+          <h2>Chi siamo</h2>
+          <p class="muted">Breve presentazione del tuo brand.</p>
+        </div>
+      </section>
     </div>
   </div>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
