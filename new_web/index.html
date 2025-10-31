@@ -4,7 +4,110 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Japan DNA Cards — E-commerce artigianale</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{
+      --bg:#FDFBF8; --card:#ffffff; --soft:#f4f6fb; --text:#1c1c22; --muted:#6e7484;
+      --accent:#E74B3C; --accent-2:#0077B6; --shadow:0 10px 30px rgba(0,0,0,.12);
+      --radius:18px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0e1117; --card:#171a1f; --soft:#222630; --text:#f0f2f8; --muted:#a0a6b6;
+        --accent:#FF6B4A; --accent-2:#0096C7; --shadow:0 10px 25px rgba(0,0,0,.5);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial;
+      color:var(--text);
+      background:url("Dynamic logo with back.png") center/cover no-repeat fixed, var(--bg);
+    }
+    .backdrop{background:rgba(253,251,248,.88); min-height:100%}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+
+    /* Header & brand */
+    header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+
+    /* LOGO with image inside (uses your logo.png) */
+    .logo{
+      width:40px; height:40px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      overflow:hidden;               /* keep rounded corners */
+      display:inline-flex;
+    }
+    .logo img{
+      width:100%; height:100%;
+      object-fit:contain;            /* show full logo; use 'cover' if you prefer edge-to-edge */
+      background:#fff;               /* optional, helps visibility on dark images */
+    }
+
+    .pill{padding:8px 12px; background:var(--soft); color:var(--muted); border-radius:999px; font-size:.9rem}
+
+    /* top nav */
+    nav{margin-top:10px; display:flex; gap:12px; flex-wrap:wrap}
+    nav a{padding:8px 12px; border-radius:999px; text-decoration:none; color:var(--text); background:var(--soft); border:1px solid transparent;}
+    nav a:hover{border-color:var(--accent)}
+
+    .hero{margin:28px 0 22px; padding:26px; border-radius:var(--radius); background:rgba(255,255,255,.9); border:1px solid rgba(0,0,0,.08)}
+    h1{margin:0 0 10px; font-size:clamp(1.4rem, 2.4vw + 1rem, 2.2rem)}
+    h2{margin:0 0 12px}
+    p{margin:0}
+
+    .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:18px}
+    .card{grid-column:span 12; background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; transition:transform .2s ease,border-color .2s ease}
+    .card:hover{transform:translateY(-2px); border-color:var(--accent)}
+    @media (min-width:740px){.half{grid-column:span 6}}
+    @media (min-width:940px){.third{grid-column:span 4}}
+    @media (min-width:1100px){.fourth{grid-column:span 3}} /* for 4-per-row layouts */
+
+    .btn{appearance:none; border:1px solid transparent; background:var(--soft); color:var(--text); padding:10px 12px; border-radius:12px; cursor:pointer; font-weight:600; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:transform .08s ease, background .2s ease, border-color .2s ease}
+    .btn:hover{background:#eaeff6}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff}
+    .btn.link{background:transparent; border:1px solid rgba(0,0,0,.16)}
+    .muted{color:var(--muted)}
+    .sep{height:1px; background:linear-gradient(90deg, transparent, var(--accent), transparent); margin:20px 0}
+
+    /* product cards */
+    .product{display:flex; flex-direction:column; gap:10px}
+    .product .img{
+      aspect-ratio:4/5; border-radius:14px; background:
+        linear-gradient(135deg, rgba(231,75,60,.25), rgba(0,119,182,.25));
+      display:flex; align-items:center; justify-content:center; font-weight:700; color:#ffffffcc;
+      border:1px solid rgba(0,0,0,.06);
+      overflow:hidden;
+    }
+    .price{font-weight:700}
+    .badges{display:flex; gap:8px; flex-wrap:wrap}
+    .badge{font-size:.8rem; padding:4px 8px; border-radius:999px; background:var(--soft); color:var(--muted)}
+
+    /* contact form */
+    form{display:grid; gap:10px}
+    input, textarea{width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(0,0,0,.12); background:var(--card); color:var(--text)}
+    textarea{min-height:110px; resize:vertical}
+
+    footer{margin:28px 0 8px; color:var(--muted); font-size:.9rem; text-align:center}
+
+    /* Colored band sections (Red/Black/Brown ready) */
+    .band{
+      border-radius: var(--radius);
+      padding: 22px;
+      margin: 18px 0;
+      box-shadow: var(--shadow);
+      color: #fff;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    .band h2{ margin: 0 0 8px }
+    .band p{ margin: 0 0 12px }
+    .band--red{   background:#E74B3C; }
+    .band--black{ background:#1c1c22; }
+    .band--brown{ background:#8B5E3C; }
+    .band .btn{ background: rgba(255,255,255,.15); color:#fff; border-color: transparent; }
+    .band .btn:hover{ background: rgba(255,255,255,.25); }
+  </style>
 </head>
 <body>
   <div class="backdrop">
@@ -215,6 +318,9 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script>
+    // aggiorna l'anno nel footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
