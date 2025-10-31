@@ -1,32 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Japan DNA Cards</title>
-  <meta http-equiv="refresh" content="5; url=/en/">
+
+  <!-- Redirect automatico -->
+  <meta http-equiv="refresh" content="5; url=https://efemcy2245.github.io/japanDNAcards/en/">
+
   <script>
-    // Detect browser language
-    const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
-    let redirect = "/en/";
-    if (userLang.startsWith("it")) redirect = "/it/";
-    // Optional: remember user choice (if you later add language switch)
-    if (localStorage.getItem("langPref")) {
-      redirect = "/" + localStorage.getItem("langPref") + "/";
-    }
-    location.replace(redirect);
+    // Rileva lingua browser e redirige
+    (function() {
+      const langPref = localStorage.getItem("langPref");
+      let redirectUrl = "https://efemcy2245.github.io/japanDNAcards/en/";
+
+      if (langPref) {
+        redirectUrl = `https://efemcy2245.github.io/japanDNAcards/${langPref}/`;
+      } else {
+        const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+        if (userLang.startsWith("it")) {
+          redirectUrl = "https://efemcy2245.github.io/japanDNAcards/it/";
+        }
+      }
+
+      window.location.replace(redirectUrl);
+    })();
   </script>
+
   <style>
-    body {font-family:system-ui; display:flex; align-items:center; justify-content:center; height:100vh; background:#fdfbf8; color:#333;}
-    .msg{text-align:center; font-size:1.1rem}
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #fdfbf8;
+      color: #333;
+      text-align: center;
+      padding: 1rem;
+    }
+    .msg {
+      max-width: 400px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    a {
+      color: #e74b3c;
+      text-decoration: none;
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body>
   <div class="msg">
-    Redirecting to your language version…<br>
-    Reindirizzamento alla lingua corretta…<br>
-    <noscript><a href="/en/">Go to English</a> | <a href="/it/">Vai alla versione italiana</a></noscript>
-  </div>
-</body>
-</html>
+    <p>Redirecting to your language version…<br>Reindirizzamento alla lingua corretta…</p>
+    <p>
+      <noscript>
+        JavaScript is required. Please choose manually:<br>
+        <a href="https://efemcy2245.github.io/japanDNAcards/it/">🇮🇹 Versione Italiana</a> |
+        <a href="https://efemcy2245.
