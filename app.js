@@ -1,2 +1,2 @@
-// aggiorna l'anno nel footer
-document.getElementById('y').textContent = new Date().getFullYear();
+// Anno automatico footer
+document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());

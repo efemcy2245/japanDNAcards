@@ -4,7 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Japan DNA Cards — E-commerce artigianale</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- SEO lingue -->
+  <link rel="alternate" href="https://tuodominio.com/it/" hreflang="it" />
+  <link rel="alternate" href="https://tuodominio.com/en/" hreflang="en" />
+  <link rel="alternate" href="https://tuodominio.com/" hreflang="x-default" />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <meta name="description" content="Carte artigianali ispirate all’estetica giapponese. Personalizzazioni, packaging regalo e spedizioni in tutta Italia."/>
 </head>
 <body>
   <div class="backdrop">
@@ -13,13 +20,20 @@
       <header>
         <div class="brand">
           <div class="logo" aria-hidden="true">
-            <img src="logo.png" alt="Japan DNA Cards logo">
+            <img src="../assets/logo.png" alt="Japan DNA Cards logo">
           </div>
           <div>
             <div>Japan DNA Cards</div>
             <small class="muted">E-commerce artigianale</small>
           </div>
         </div>
+
+        <!-- Switch lingua -->
+        <nav class="lang-switch" aria-label="Cambia lingua">
+          <a class="btn tiny" href="/it/" aria-current="page">IT</a>
+          <a class="btn tiny" href="/en/">EN</a>
+        </nav>
+
         <div class="pill">Consegne in tutta Italia</div>
       </header>
 
@@ -31,13 +45,13 @@
         <a href="#contatti">Contatti</a>
       </nav>
 
-      <!-- HERO / HOME -->
+      <!-- HERO -->
       <section id="home" class="hero">
         <h1>Benvenuto! ✨</h1>
         <p class="muted">Contatti rapidi del nostro e-commerce.</p>
       </section>
 
-      <!-- QUICK CONTACT CARDS -->
+      <!-- CONTATTI RAPIDI -->
       <section class="grid" aria-label="Contatti rapidi">
         <article class="card half">
           <h2>Telefono</h2>
@@ -55,14 +69,13 @@
 
       <div class="sep" role="separator" aria-hidden="true"></div>
 
-      <!-- PRODOTTI IN VETRINA -->
+      <!-- PRODOTTI -->
       <section id="prodotti" class="grid" aria-labelledby="tit-prodotti">
         <div class="card" style="grid-column:span 12">
           <h2 id="tit-prodotti">Le nostre creazioni</h2>
           <p class="muted">Selezione rapida dei prodotti artigianali. Ordina via WhatsApp o richiedi info.</p>
         </div>
 
-        <!-- Prodotto 1 -->
         <article class="card third product">
           <div class="img">Blue Blossom</div>
           <div>
@@ -70,16 +83,13 @@
             <div class="price">€ 25</div>
             <p class="muted">Carta intagliata a mano, ispirazione floreale.</p>
           </div>
-          <div class="badges">
-            <span class="badge">Fatto a mano</span><span class="badge">Materiali sostenibili</span>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:6px">
+          <div class="badges"><span class="badge">Fatto a mano</span><span class="badge">Materiali sostenibili</span></div>
+          <div class="btn-row">
             <a class="btn primary" href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20ordinare%20Blue%20Blossom%20Card" target="_blank" rel="noopener">Ordina via WhatsApp</a>
             <a class="btn" href="#contatti">Richiedi info</a>
           </div>
         </article>
 
-        <!-- Prodotto 2 -->
         <article class="card third product">
           <div class="img">Red Waves</div>
           <div>
@@ -87,16 +97,13 @@
             <div class="price">€ 20</div>
             <p class="muted">Motivo onde giapponesi, taglio di precisione.</p>
           </div>
-          <div class="badges">
-            <span class="badge">Edizione limitata</span><span class="badge">Packaging incluso</span>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:6px">
+          <div class="badges"><span class="badge">Edizione limitata</span><span class="badge">Packaging incluso</span></div>
+          <div class="btn-row">
             <a class="btn primary" href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20ordinare%20Red%20Waves%20Card" target="_blank" rel="noopener">Ordina via WhatsApp</a>
             <a class="btn" href="#contatti">Richiedi info</a>
           </div>
         </article>
 
-        <!-- Prodotto 3 -->
         <article class="card third product">
           <div class="img">Green Leaf</div>
           <div>
@@ -104,38 +111,19 @@
             <div class="price">€ 22</div>
             <p class="muted">Design botanico con carta premium.</p>
           </div>
-          <div class="badges">
-            <span class="badge">Eco</span><span class="badge">Idea regalo</span>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:6px">
+          <div class="badges"><span class="badge">Eco</span><span class="badge">Idea regalo</span></div>
+          <div class="btn-row">
             <a class="btn primary" href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20ordinare%20Green%20Leaf%20Card" target="_blank" rel="noopener">Ordina via WhatsApp</a>
-            <a class="btn" href="#contatti">Richiedi info</a>
-          </div>
-        </article>
-
-        <!-- Prodotto 4 (optional extra) -->
-        <article class="card fourth product">
-          <div class="img">Black Leaf</div>
-          <div>
-            <h3 style="margin:.2rem 0">Black Leaf Card</h3>
-            <div class="price">€ 100</div>
-            <p class="muted">Design botanico con carta premium.</p>
-          </div>
-          <div class="badges">
-            <span class="badge">Eco</span><span class="badge">Idea regalo</span>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:6px">
-            <a class="btn primary" href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20ordinare%20Black%20Leaf%20Card" target="_blank" rel="noopener">Ordina via WhatsApp</a>
             <a class="btn" href="#contatti">Richiedi info</a>
           </div>
         </article>
       </section>
 
-      <!-- RED SECTION -->
+      <!-- BANDA COLORE (ESEMPIO) -->
       <section id="red" class="grid" aria-labelledby="tit-red">
         <article class="card band band--red" style="grid-column:span 12">
           <h2 id="tit-red">Collezione Red</h2>
-          <p>Questa è solo una sezione per accedere a una pagina.</p>
+          <p>Sezione promozionale con link rapido ai prodotti.</p>
           <a class="btn" href="#prodotti">Vedi prodotti</a>
         </article>
       </section>
@@ -148,25 +136,9 @@
           <h2 id="tit-chisono">Chi sono</h2>
           <p class="muted">
             Japan DNA Cards nasce dalla passione per l’estetica giapponese e il design minimale.
-            Ogni card è progettata e rifinita a mano in laboratorio, con materiali selezionati e processi
-            sostenibili. Realizzo anche personalizzazioni per eventi e ricorrenze.
+            Ogni card è progettata e rifinita a mano in laboratorio, con materiali selezionati e processi sostenibili.
+            Realizzo anche personalizzazioni per eventi e ricorrenze.
           </p>
-        </article>
-        <article class="card half">
-          <h3 style="margin-top:0">Valori</h3>
-          <ul style="margin:0; padding-left:18px; color:var(--muted)">
-            <li>Artigianalità e cura del dettaglio</li>
-            <li>Materiali certificati e filiera sostenibile</li>
-            <li>Design pulito e significato simbolico</li>
-          </ul>
-        </article>
-        <article class="card half">
-          <h3 style="margin-top:0">Servizi</h3>
-          <ul style="margin:0; padding-left:18px; color:var(--muted)">
-            <li>Personalizzazione nomi/loghi</li>
-            <li>Packaging regalo</li>
-            <li>Ordini per eventi (wedding, corporate, fiere)</li>
-          </ul>
         </article>
       </section>
 
@@ -177,7 +149,7 @@
         <article class="card half">
           <h2 id="tit-contatti">Contatti</h2>
           <p class="muted">Scrivimi per ordini, preventivi o collaborazioni.</p>
-          <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
+          <div class="btn-row">
             <a class="btn primary" href="tel:+393331234567">Chiama</a>
             <a class="btn" href="mailto:hello@japandnacards.it">Email</a>
             <a class="btn link" href="https://wa.me/393331234567" target="_blank" rel="noopener">WhatsApp</a>
@@ -188,33 +160,21 @@
         <article class="card half">
           <h2 style="margin-top:0">Scrivimi</h2>
           <form action="#" method="post">
-            <label>
-              <span class="muted">Nome</span>
-              <input type="text" name="name" required>
-            </label>
-            <label>
-              <span class="muted">Email</span>
-              <input type="email" name="email" required>
-            </label>
-            <label>
-              <span class="muted">Messaggio</span>
-              <textarea name="message" required></textarea>
-            </label>
+            <label><span class="muted">Nome</span><input type="text" name="name" required></label>
+            <label><span class="muted">Email</span><input type="email" name="email" required></label>
+            <label><span class="muted">Messaggio</span><textarea name="message" required></textarea></label>
             <button class="btn primary" type="submit">Invia</button>
           </form>
-          <p class="muted" style="margin-top:8px; font-size:.85rem">
-            Inviando il messaggio accetti il trattamento dei dati secondo la nostra privacy policy.
-          </p>
+          <p class="muted note">Inviando il messaggio accetti il trattamento dei dati secondo la nostra privacy policy.</p>
         </article>
       </section>
 
       <footer>
-        © <span id="y"></span> Japan DNA Cards • P.IVA / dati aziendali •
-        <a href="#contatti" style="color:inherit">Contattaci</a>
+        © <span id="y"></span> Japan DNA Cards • <a href="#contatti" style="color:inherit">Contattaci</a>
       </footer>
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="../assets/app.js"></script>
 </body>
 </html>
