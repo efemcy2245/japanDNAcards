@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Japan DNA Cards</title>
+  <meta http-equiv="refresh" content="5; url=/en/">
+  <script>
+    // Detect browser language
+    const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+    let redirect = "/en/";
+    if (userLang.startsWith("it")) redirect = "/it/";
+    // Optional: remember user choice (if you later add language switch)
+    if (localStorage.getItem("langPref")) {
+      redirect = "/" + localStorage.getItem("langPref") + "/";
+    }
+    location.replace(redirect);
+  </script>
+  <style>
+    body {font-family:system-ui; display:flex; align-items:center; justify-content:center; height:100vh; background:#fdfbf8; color:#333;}
+    .msg{text-align:center; font-size:1.1rem}
+  </style>
+</head>
+<body>
+  <div class="msg">
+    Redirecting to your language version…<br>
+    Reindirizzamento alla lingua corretta…<br>
+    <noscript><a href="/en/">Go to English</a> | <a href="/it/">Vai alla versione italiana</a></noscript>
+  </div>
+</body>
+</html>
